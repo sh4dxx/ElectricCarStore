@@ -1,0 +1,129 @@
+nav {
+    grid-area: nav;
+    min-height: 60px;
+    height: auto;
+    color: aliceblue;
+}
+aside {
+    grid-area: aside;
+    padding: 20px 30px;
+    background-color: rgb(211, 211, 211);
+}
+
+main {
+    grid-area: main;
+    background-color: rgb(255, 255, 255);
+    /* grid-template-columns: repeat(auto-fill, 30%); */
+    grid-template-rows: auto;
+    row-gap: 10px;
+    column-gap: 10px;
+    padding: 10px 10px;
+}
+
+aside > .search {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+main > .pagination {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+    background-color: rgb(24, 49, 107);
+    height: 60px;
+    color: aliceblue;
+    > * {
+        text-align: center;
+    }
+}
+
+.my-container {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "aside"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    min-height: 100vh;
+}
+
+/* tablet */
+@media (width >= 576px) {
+    body {
+        background-color: rgb(40, 20, 59);
+    }
+    .my-container {
+        grid-template-areas:
+            "nav nav"
+            "aside main"
+            "footer footer";
+        grid-template-columns: 20% 1fr;
+        grid-template-rows: auto auto auto;
+        row-gap: 0px;
+    }
+    nav {
+        height: 100%;
+    }
+    aside {
+        padding: 20px 10px;
+    }
+
+    main > .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 45%);
+        grid-template-rows: auto auto;
+        row-gap: 10px;
+        column-gap: 10px;
+        padding: 10px 0px;
+        > div {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+        }
+    }
+}
+
+/*  latptop */
+@media (width >= 1024px) {
+    .my-container {
+        grid-template-areas:
+            "nav aside"
+            "nav main"
+            "footer main";
+        grid-template-columns: 15% 1fr;
+        grid-template-rows: auto 1fr;
+        row-gap: 0px;
+    }
+    nav {
+        height: 100%;
+    }
+    aside {
+        padding: 20px 30px;
+    }
+
+    main > .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 24%);
+        grid-template-rows: auto auto;
+        row-gap: 10px;
+        column-gap: 10px;
+        padding: 10px 0px;
+        > div {
+            padding-top: 0rem !important;
+            padding-bottom: 0rem !important;
+        }
+    }
+}
