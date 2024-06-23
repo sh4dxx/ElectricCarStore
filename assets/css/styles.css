@@ -118,7 +118,7 @@ footer {
             "nav main"
             "footer main";
         grid-template-columns: 15% 1fr;
-        grid-template-rows: 12% 1fr;
+        grid-template-rows: 12% auto 10%;
         row-gap: 0px;
     }
     footer {
