@@ -4,6 +4,12 @@ nav {
     height: auto;
     color: aliceblue;
 }
+
+.navbar-nav {
+    width: 100%;
+    justify-content: end;
+}
+
 aside {
     grid-area: aside;
     padding: 20px 30px;
@@ -13,7 +19,6 @@ aside {
 main {
     grid-area: main;
     background-color: rgb(255, 255, 255);
-    /* grid-template-columns: repeat(auto-fill, 30%); */
     grid-template-rows: auto;
     row-gap: 10px;
     column-gap: 10px;
@@ -41,8 +46,7 @@ main > .pagination {
 
 footer {
     grid-area: footer;
-    background-color: rgb(24, 49, 107);
-    height: 60px;
+    background-color: #1D3568;
     color: aliceblue;
     > * {
         text-align: center;
@@ -63,9 +67,6 @@ footer {
 
 /* tablet */
 @media (width >= 576px) {
-    body {
-        background-color: rgb(40, 20, 59);
-    }
     .my-container {
         grid-template-areas:
             "nav nav"
@@ -104,11 +105,14 @@ footer {
             "nav main"
             "footer main";
         grid-template-columns: 15% 1fr;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: auto auto;
         row-gap: 0px;
     }
-    nav {
-        height: 100%;
+    footer {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     aside {
         padding: 20px 30px;
@@ -125,5 +129,22 @@ footer {
             padding-top: 0rem !important;
             padding-bottom: 0rem !important;
         }
+    }
+
+    .navbar {
+      padding-top: 30px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+    }
+    .container-fluid {
+      gap: 20px;
+    }
+    .navbar-expand-sm .navbar-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 }
